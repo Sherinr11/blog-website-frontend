@@ -5,11 +5,11 @@
 ## Screenshots
 
  
-   ![Homepage](./assets/homepage_screenshot.png)  
+   ![](/assets/1.png)  
    *Description: The main landing page of the website.*
 
 2. **About Us Page Screenshot**  
-   ![About Us Page](assets/about_us_page_screenshot.png)  
+   ![About Us Page](./assets/2.png)  
    *Description: The page providing information about the company and team.*
 
 3. **Contact Us Page Screenshot**  
