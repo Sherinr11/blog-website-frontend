@@ -5,7 +5,7 @@
 ## Screenshots
 
  
-   ![](/assets/1.png)  
+   ![Home](assets/1.png)  
    *Description: The main landing page of the website.*
 
 2. **About Us Page Screenshot**  
