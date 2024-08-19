@@ -1,0 +1,83 @@
+.post-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-form h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #000; /* Change heading color to black */
+}
+
+.post-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-form input,
+.post-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #000; /* Ensure input and textarea text is black */
+}
+
+.post-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.post-form button {
+  padding: 10px 20px;
+  background-color:  #104e62;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.post-form button:hover {
+  background-color:  #104e62;
+}
+
+.error-message {
+  color: #d9534f;
+  margin-top: 10px;
+}
+
+
+.secret-key {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #020202;
+}
+
+.secret-key p {
+  margin: 0;
+  font-size: 1rem;
+  color: #000; /* Ensure secret key text is black */
+}
+
+.secret-key button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #5bc0de;
+  color: #070707;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.secret-key button:hover {
+  background-color: #31b0d5;
+}

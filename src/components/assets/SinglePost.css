@@ -1,0 +1,126 @@
+.single-post {
+  margin: 20px auto;
+  max-width: 1000px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.single-post h2 {
+  color: #1a1a1a;
+  font-size: 3rem;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #e0e0e0;
+  padding-bottom: 15px;
+  text-decoration: underline;
+}
+
+.single-post p {
+  color: #333;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.single-post p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* New Timestamps Section */
+.single-post .timestamps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: black;
+  margin: 15px 0;
+}
+
+.single-post .timestamps p {
+  margin: 0;
+}
+
+.single-post .timestamps span {
+  font-size: 20px;
+  color: black;
+}
+
+/* Delete Button */
+.delete-button {
+  padding: 10px 20px;
+  background-color: #104e62;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.delete-button:hover {
+  background-color: #0d3d4a;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  color: black;
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  color: black;
+}
+
+.modal-content input {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #0d3d4a;
+}
+
+.modal-content button:first-child {
+  background-color: #104e62;
+  color: #fff;
+}
+
+.modal-content button:first-child:hover {
+  background-color: #0d3d4a;
+}
+
+.modal-content button:last-child {
+  background-color: #ccc;
+}
+
+.modal-content button:last-child:hover {
+  background-color: #999;
+}

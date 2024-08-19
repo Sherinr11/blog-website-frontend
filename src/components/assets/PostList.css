@@ -1,0 +1,148 @@
+/* Container for the post list */
+.post-list {
+  color: black;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 1000px;
+  text-align: center;
+  background: #f9f9f9; /* Light background for better contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card-like effect */
+}
+
+/* Header styling */
+.post-list h2 {
+  color: #003366;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 20px; /* Space below the header */
+}
+
+/* Search container styling */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the search bar and button */
+  margin-bottom: 20px; /* Space below the search */
+}
+
+/* Common styling for search elements */
+.search-input,
+.search-select,
+.search-button {
+  height: 40px; /* Uniform height for all search elements */
+  line-height: 40px; /* Align text vertically */
+  padding: 0 10px; /* Horizontal padding for all elements */
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Search input field styling */
+.search-input {
+  border: 1px solid #ccc;
+  width: 200px; /* Set a default width */
+  margin-right: 10px; /* Space between input and dropdown/button */
+  margin-top: 20px;
+}
+
+/* Dropdown styling */
+.search-criteria {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 0 10px; /* Padding inside the dropdown */
+  margin-right: 10px; /* Space between dropdown and button */
+  height: 40px; /* Match the height with other elements */
+  font-size: 1rem; /* Font size for consistency */
+  line-height: 40px; /* Align text vertically */
+  cursor: pointer; /* Pointer cursor to indicate it's clickable */
+}
+
+/* Search button styling */
+.search-button {
+  margin-top: 5px;
+  border: none;
+  background-color: #050505;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+  height: 40px; /* Match the height with other elements */
+  padding: 0 15px; /* Padding inside the button */
+}
+
+/* Search button hover effect */
+.search-button:hover {
+  background-color: #085a73;
+}
+
+/* Unordered list styling */
+.post-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.post-list ul p{
+  color: black;
+}
+/* List item styling */
+.post-list li {
+  color:black;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  flex-direction: column; /* Ensure title and content stack vertically */
+  align-items: flex-start; /* Align text to start */
+}
+
+/* Title styling within list items */
+.post-list h3 {
+  margin: 0;
+  font-size: 1.25rem; /* Slightly smaller font size for titles */
+  color: #020202;
+  margin-bottom: 10px;
+}
+
+/* Links styling */
+.post-list a {
+  text-decoration: none;
+  color: #080808;
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.post-list a:hover {
+  text-decoration: underline;
+  color: #003366; /* Change color on hover */
+}
+
+/* Button styling */
+.post-list button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #104e62;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.post-list button:hover {
+  background-color: #085a73;
+}
+
+.post-list button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff4d4d;
+  font-weight: bold;
+  margin-bottom: 15px;
+}

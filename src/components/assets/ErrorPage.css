@@ -1,0 +1,15 @@
+
+
+.error-page {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .error-page h2 {
+    color: #dc3545;
+  }
+  
+  .error-page p {
+    color: #666;
+  }
+  
