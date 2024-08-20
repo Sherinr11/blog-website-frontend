@@ -6,7 +6,7 @@ import { BlogProvider } from './BlogContext';
 import HomeDashboard from './components/HomeDashboard';
 import PostList from './components/PostList';
 import SinglePost from './components/SinglePost';
-import ErrorPage from './components/ErrorPage';
+
 import PostForm from './components/PostForm';
 import Navbar from './components/Navbar'; // Import the Navbar component
 
@@ -23,7 +23,7 @@ function App() {
             <Route path="/posts" element={<PostList />} />
             <Route path="/addpost" element={<PostForm />} />
             <Route path="/posts/:id" element={<SinglePost />} />
-            <Route path="*" element={<ErrorPage />} />
+            <Route path="*" element={<HomeDashboard />} />
           </Routes>
         </div>
       </BlogProvider>
