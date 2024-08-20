@@ -1,23 +1,22 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom'; // Use HashRouter for GitHub Pages
 import { BlogProvider } from './BlogContext';
 
 import HomeDashboard from './components/HomeDashboard';
 import PostList from './components/PostList';
 import SinglePost from './components/SinglePost';
-
 import PostForm from './components/PostForm';
-import Navbar from './components/Navbar'; // Import the Navbar component
+import Navbar from './components/Navbar';
 
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter> {/* Use HashRouter for GitHub Pages */}
       <BlogProvider>
         <div className="App">
-          <Navbar /> {/* Add the Navbar here */}
+          <Navbar />
           <Routes>
             <Route path="/" element={<HomeDashboard />} />
             <Route path="/posts" element={<PostList />} />
@@ -27,7 +26,7 @@ function App() {
           </Routes>
         </div>
       </BlogProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
