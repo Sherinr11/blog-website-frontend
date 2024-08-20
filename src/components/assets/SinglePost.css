@@ -24,6 +24,7 @@
   font-size: 1.25rem;
   margin-top: 0;
   margin-bottom: 25px;
+  text-align: justify;
 }
 
 .single-post p:last-of-type {
