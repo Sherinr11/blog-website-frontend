@@ -9,31 +9,30 @@ const PostList = () => {
   const [searchCriterion, setSearchCriterion] = useState('title');
   const [filteredPosts, setFilteredPosts] = useState([]);
 
- 
+  // Update filteredPosts whenever posts, searchQuery, or searchCriterion change
   useEffect(() => {
-    setFilteredPosts(posts);
-  }, [posts]);
+    const handleSearch = () => {
+      if (searchQuery.trim() !== '') {
+        const lowercasedQuery = searchQuery.toLowerCase();
+        const filtered = posts.filter(post => {
+          const fieldToSearch = post[searchCriterion]?.toLowerCase() || '';
+          return fieldToSearch.includes(lowercasedQuery);
+        });
+        setFilteredPosts(filtered);
+      } else {
+        setFilteredPosts(posts);
+      }
+    };
 
-  
-  const handleSearch = () => {
-    if (searchQuery.trim() !== '') {
-      const lowercasedQuery = searchQuery.toLowerCase(); 
-
-     
-      const filtered = posts.filter(post => {
-        const fieldToSearch = post[searchCriterion].toLowerCase(); 
-        return fieldToSearch.includes(lowercasedQuery); 
-      });
-
-      setFilteredPosts(filtered);
-    } else {
-      setFilteredPosts(posts); 
-    }
-  };
-
+    handleSearch(); // Call the search function whenever dependencies change
+  }, [posts, searchQuery, searchCriterion]);
 
   if (loading) {
     return <p className="loading-message">Loading posts...</p>; // Loading state
+  }
+
+  if (error) {
+    return <p className="error-message">{error}</p>; // Error state
   }
 
   return (
@@ -55,11 +54,10 @@ const PostList = () => {
           placeholder={`Search by ${searchCriterion}`}
           className="search-input"
         />
-        <button onClick={handleSearch} className="search-button">
+        <button onClick={() => setSearchQuery(searchQuery)} className="search-button">
           Search
         </button>
       </div>
-      {error && <p className="error-message">{error}</p>}
       <ul>
         {filteredPosts.length === 0 ? (
           <p>No posts available.</p>
