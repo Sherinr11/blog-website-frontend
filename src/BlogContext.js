@@ -11,45 +11,55 @@ export const BlogProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`${API_URL}/readAllContent`)
-      .then(response => {
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/readAllContent`);
+        
         if (response.data && response.data.data) {
           setPosts(response.data.data);
         } else {
           setError('Unexpected response structure.');
         }
-        setLoading(false);
-      })
-      .catch(error => {
+      } catch (err) {
         setError('Failed to fetch posts.');
+        console.error('Error fetching posts:', err);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchPosts();
   }, []);
 
   const addPost = async (newPost) => {
     try {
       const response = await axios.post(`${API_URL}/writeContent`, newPost);
+     
       if (response.data && response.data.data.secretKey) {
-        setPosts([...posts, response.data.data]);
+        // Refetch posts after successfully adding a new post
+        await fetchPosts();
         return response.data;
       } else {
         throw new Error('Failed to add post. No secret key returned.');
       }
-    } catch (error) {
-      throw error;
+    } catch (err) {
+      console.error('Error adding post:', err);
+      throw err;
     }
   };
 
   const searchPosts = async (query) => {
     try {
       const response = await axios.get(`${API_URL}/searchBlog`, { params: query });
+     
       if (response.data && response.data.data) {
         return response.data.data;
       } else {
         return [];
       }
-    } catch (error) {
+    } catch (err) {
       setError('Failed to search posts.');
+      console.error('Error searching posts:', err);
       return [];
     }
   };
@@ -57,14 +67,33 @@ export const BlogProvider = ({ children }) => {
   const deletePost = async (id, key) => {
     try {
       const response = await axios.delete(`${API_URL}/deleteBlog/${id}/${key}`);
+      
       if (response.data && response.data.msg === 'Blog deleted') {
-        setPosts(posts.filter(post => post._id !== id));
+        // Refetch posts after successfully deleting a post
+        await fetchPosts();
         return response.data;
       } else {
         throw new Error(response.data.msg || 'Failed to delete post');
       }
-    } catch (error) {
+    } catch (err) {
+      
       throw new Error('Failed to delete post');
+    }
+  };
+
+
+  const fetchPosts = async () => {
+    try {
+      const response = await axios.get(`${API_URL}/readAllContent`);
+      
+      if (response.data && response.data.data) {
+        setPosts(response.data.data);
+      } else {
+        setError('Unexpected response structure.');
+      }
+    } catch (err) {
+      setError('Failed to fetch posts.');
+      console.error('Error fetching posts:', err);
     }
   };
 
